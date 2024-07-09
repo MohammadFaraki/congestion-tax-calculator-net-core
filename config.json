@@ -1,0 +1,26 @@
+{
+    "tollFreeVehicles": ["Emergency", "Buss", "Diplomat", "Motorcycle", "Military", "Foreign"],
+    "tollFreeDates": {
+        "2013": [
+            {"month": 1, "days": [1]},
+            {"month": 3, "days": [28, 29]},
+            {"month": 5, "days": [6, 27]},
+            {"month": 7, "days": []},
+            {"month": 8, "days": [26]},
+            {"month": 12, "days": [24, 25, 26, 31]}
+        ]
+    },
+    "tollFees": [
+        {"start": "06:00", "end": "06:29", "fee": 8},
+        {"start": "06:30", "end": "06:59", "fee": 13},
+        {"start": "07:00", "end": "07:59", "fee": 18},
+        {"start": "08:00", "end": "08:29", "fee": 13},
+        {"start": "08:30", "end": "14:59", "fee": 8},
+        {"start": "15:00", "end": "15:29", "fee": 13},
+        {"start": "15:30", "end": "16:59", "fee": 18},
+        {"start": "17:00", "end": "17:59", "fee": 13},
+        {"start": "18:00", "end": "18:29", "fee": 8}
+    ],
+  "maxDailyFee": 60,
+  "maxInterval": 60
+}
