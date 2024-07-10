@@ -78,22 +78,16 @@ namespace CongestionTaxCalculator.Services
 
         private bool IsTollFreeDate(DateTime date)
         {
-            int year = date.Year;
-            int month = date.Month;
-            int day = date.Day;
-
             if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday) return true;
 
-            if (year == 2013)
+            if (_config.TollFreeDates.TryGetValue(date.Year.ToString(), out var months))
             {
-                if ((month == 1 && day == 1) ||
-                    (month == 3 && (day == 28 || day == 29)) ||
-                    (month == 5 && (day == 6 || day == 27)) ||
-                    month == 7 ||
-                    (month == 8 && day == 26) ||
-                    (month == 12 && (day == 24 || day == 25 || day == 26 || day == 31)))
+                foreach (var month in months)
                 {
-                    return true;
+                    if (month.Month == date.Month && month.Days.Contains(date.Day))
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
